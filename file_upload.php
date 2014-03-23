@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-        $upload_dir = "./uploads";
+        $upload_dir = "./img";
         if(isset($_FILES['file']['tmp_name']));
         {
             // Number of uploaded files
@@ -26,7 +26,7 @@
                     // copy the file to the specified dir 
                     $path = $_FILES['file']['name'][$i];
                     $ext = pathinfo($path, PATHINFO_EXTENSION);
-                    if(@copy($_FILES['file']['tmp_name'][$i],$upload_dir.'/'.$i.'.'.$ext))
+                    if(@copy($_FILES['file']['tmp_name'][$i],$upload_dir.'/'.($i + 1).'.'.$ext))
                     {
                         /*** give praise and thanks to the php gods ***/
                         $messages[] = $_FILES['file']['name'][$i].' uploaded';
