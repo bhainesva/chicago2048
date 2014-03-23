@@ -24,7 +24,9 @@
                 else
                 {
                     // copy the file to the specified dir 
-                    if(@copy($_FILES['file']['tmp_name'][$i],$upload_dir.'/'.$i))
+                    $path = $_FILES['file']['name'][$i];
+                    $ext = pathinfo($path, PATHINFO_EXTENSION);
+                    if(@copy($_FILES['file']['tmp_name'][$i],$upload_dir.'/'.$i.'.'.$ext))
                     {
                         /*** give praise and thanks to the php gods ***/
                         $messages[] = $_FILES['file']['name'][$i].' uploaded';
