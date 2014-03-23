@@ -43,7 +43,7 @@
 
     <center><h1>
         Hello<br />
-        A snapchat was sent to <?php echo($messages[0]); ?><br />
+        <?php echo($messages[0]); ?><br />
     </h1></center>
 </body>
 </html>
